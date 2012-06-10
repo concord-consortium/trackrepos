@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__) + '/../lib/')
+
+require 'optparse'
+require 'trackrepos'
+
+if %w(--version -v).include? ARGV.first
+  puts "trackrepos #{TrackRepos::VERSION}"
+  exit(0)
+end
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: trackrepos"
+  opts.on("-s", "--specification-file YAMLFILE",
+    "Use specification file YAMLFILE instead of '#{TrackRepos::Repos::TRACKED_YAML}'") do |s|
+    options[:tracked_filename] = s
+  end
+  opts.on("-d", "--directory-file YAMLDIRECTORYFILE",
+    "Use specification file YAMLDIRECTORYFILE instead of '#{TrackRepos::Repos::TRACKED_DIRECTORIES_YAML}'") do |d|
+    options[:tracked_directories] = d
+  end
+  opts.on("-v", "--verbose",
+    "Display yaml specification file") do |v|
+    options[:verbose] = v
+  end
+
+  opts.on("-g", "--generate",
+    "Generate and display yaml specification suitable for a '#{TrackRepos::Repos::TRACKED_YAML}' file from existing repositories") do |g|
+    options[:generate] = g
+  end
+end.parse!
+
+repos = TrackRepos::Repos.new options
+repos.track
