@@ -1,4 +1,4 @@
-# track-repos
+# trackrepos
 
 Command line tool that parses a yaml file in a directory to update and report on a collection of repositories.
 
@@ -100,6 +100,12 @@ in both `dir1/` and `dir2/`
     - dir1
     - dir2
 
+### Specifying different names for yaml specification files
+
+This example looks in the file `tracked-directories.yaml` in the current directory
+and looks for the file `tracked-repos.yaml` in each of the directroies it references.
+
+    $ trackrepos -d tracked-directories.yaml -s tracked-repos.yaml
 
 ## Contributing
 
