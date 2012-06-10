@@ -12,11 +12,11 @@ Install the Ruby Gem `track-repos`:
 
 Create a `.tracked-repos.yaml` file to update and keep track of either existing git repositores or new ones you intend to add.
 
-There are currently three types of git repositores that can be tracked andupdated:
+There are currently three types of git repositores that can be tracked and updated:
 
 1. Regular git repositories.
 2. Git clones of Subversion repositories
-3. Git clones of git mirrors of subversion repositories (need to explicity request new tags).
+3. Git clones of git mirrors of subversion repositories (need to explicitly request new tags).
 
 Here's an example yaml configuration file that tracks the Ruby Gems `aasm`, and `builder`.
 Normally the master branch is fetched hower the specifiction for thr `builder` gem indicates that
