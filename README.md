@@ -23,6 +23,8 @@ Normally the master branch is fetched hower the specifiction for thr `builder` g
 the `trunk` branch should be checked out and tracked.In addition the `arduino` project which
 is located in a Subersion repository is checked out as a git clone of a subversion repository.
 
+file: .tracked-repos.yaml
+
     ---
     :git:
     - :path: aasm
@@ -42,6 +44,11 @@ The last item in the list specifies that the source code for Ruby should be chec
 this case it is being cloned from a git repository on github which is a miirror of the main
 Ruby Subversion repository. This tpe if differentiated from a normal git repository because an
 additional action is taken to manually fetch any updated tags.
+
+### tracked-repos.yaml examples
+
+1. [gems](https://raw.github.com/gist/2907585/gems-tracked-repos.yaml)
+2. [javascript](https://raw.github.com/gist/2907585/javascript-tracked-repos.yaml)
 
 The `.tracked-repos.yaml` file is a YAML serialization of the kind of data expressed in this Ruby Hash.
 Each type of external repositor consists of an array of repository specificationns with keys for
