@@ -6,7 +6,7 @@ require 'trackrepos/version'
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Stephen Bannasch"]
-  gem.email         = ["sbannasch@concord.org"]
+  gem.email         = ["stephen.bannasch@gmail.com"]
   gem.description   = %q{Uses yaml configuration files to track and update collections of external git repositories}
   gem.summary       = %q{Useful for tracking large numbers of external git repositories}
   gem.homepage      = "https://github.com/concord-consortium/trackrepos"
