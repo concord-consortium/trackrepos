@@ -47,13 +47,13 @@ additional action is taken to manually fetch any updated tags.
 
 ### tracked-repos.yaml examples
 
-1. [gems](https://raw.github.com/gist/2907585/gems-tracked-repos.yaml)
-2. [javascript](https://raw.github.com/gist/2907585/javascript-tracked-repos.yaml)
+1. [Ruby Gems](https://raw.github.com/gist/2907585/gems-tracked-repos.yaml)
+2. [JavaScript](https://raw.github.com/gist/2907585/javascript-tracked-repos.yaml)
 
-Running: trackrepos in a directory with a file in that format named .tracked-repos.yaml will update (checking out the repo if it doesn't exist locally) and summarize the newest and oldest projects that were updated.
+Running: trackrepos in a directory with a file in that format named `.tracked-repos.yaml` will update (checking out the repo if it doesn't exist locally) and summarize the newest and oldest projects that were updated.
 
 Here's a truncated version of the console output when running trackrepos in the directory that contains
-the jacvascript yaml tracking file linked above.
+the javascript yaml tracking file linked above.
 
     =======================================================================================
 
