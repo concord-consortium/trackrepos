@@ -4,7 +4,7 @@ require 'time'
 module TrackRepos
   class Repos
 
-    PATH_FORMAT_STR   = "    %-56s%-30s%-24s"
+    PATH_FORMAT_STR   = "    %-50s%-30s%-30s"
     COMMIT_FORMAT_STR = "  %-24s%s"
 
     TRACKED_YAML = '.tracked-repos.yaml'
@@ -256,7 +256,16 @@ Least recently updated:
       end
       readme = Dir["*"].find_all {|p| p[/.*readme.*/i]}
       unless readme.empty?
-        desc = File.readlines(readme[0])[0].strip
+        content = File.readlines(readme[0])
+        if content.empty?
+          desc = nil
+        else
+          desc = content[0].strip
+          if desc.length > 60
+            desc = desc[0,60].strip
+            desc += " ..."
+          end
+        end
         return desc
       end
       desc
